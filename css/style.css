@@ -1,0 +1,77 @@
+/* Start Global Rules */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Pacifico";
+  src: url(../webfonts/Pacifico-Regular.ttf), format("truetype");
+  src: url(../webfonts/Pacifico-Regular.woff), format("woff");
+  src: url(../webfonts/Pacifico-Regular.woff2), format("woff2");
+}
+@font-face {
+  font-family: "Righteous";
+  src: url(../webfonts/Righteous-Regular.ttf), format("truetype");
+  src: url(../webfonts/Righteous-Regular.woff), format("woff");
+  src: url(../webfonts/Righteous-Regular.woff2), format("woff2");
+}
+
+:root {
+  --main-font: "Pacifico", cursive;
+  --secondary-font: "Righteous", cursive;
+}
+/* End Global Rules */
+
+/* Start Override the default bootstrap styles */
+.btn-secondary {
+  --bs-btn-bg: #d1512d;
+  --bs-btn-hover-bg: #bb4120;
+}
+.form-control:focus {
+  border-color: #f49907;
+  box-shadow: 0 0 0 0.25rem rgba(240, 158, 35, 0.415);
+}
+/* End Override the default bootstrap styles */
+
+body {
+  background-color: #f7ecde;
+}
+.dotted {
+  border: none;
+  border-top: 3px dotted;
+}
+
+h1 {
+  font-family: var(--main-font);
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 3.125rem;
+}
+h1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  left: 0;
+  bottom: 10px;
+  background-color: #fec260;
+  transition: height 350ms;
+  z-index: -1;
+}
+h1:hover::before {
+  height: 50%;
+}
+
+h2 {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 25px;
+  background-image: linear-gradient(to right, #44aa63, #c0c016);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
